@@ -30,3 +30,25 @@ jobs:
       with:
         name: hello
         path: binaries/
+
+    - name: Install dependencies
+      run: |
+        sudo add-apt-repository --yes ppa:mir-team/dev
+        sudo apt install --yes \
+          build-essential \
+          libapparmor-dev \
+          libboost-iostreams-dev \
+          libfreetype6-dev \
+          libmiral-dev \
+          libwayland-dev \
+          ninja-build \
+          pkg-config
+
+    - name: Run TICS analysis
+      uses: tiobe/tics-github-action@v3
+      with:
+        mode: client
+        project: ubuntu-frame
+        viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
+        ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
+        installTics: true
