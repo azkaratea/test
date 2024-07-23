@@ -28,5 +28,5 @@ jobs:
     - name: Upload binary
       uses: actions/upload-artifact@v2
       with:
-        name: helloo
+        name: hello
         path: binaries/
