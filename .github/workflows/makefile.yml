@@ -17,7 +17,9 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.PKGTOKEN }}
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+      
     - name: Run TICS analysis
       uses: tiobe/tics-github-action@v3
       with:
