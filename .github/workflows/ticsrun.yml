@@ -36,9 +36,9 @@ jobs:
     - name: Run TICS analysis with github-action
       uses: tiobe/tics-github-action@v3
       with:
-        mode: client
+        mode: qserver
         project: testimage
-        filelist: .
+        filelist: "${{ github.workspace }}"
         viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
         ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
         installTics: true
