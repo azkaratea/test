@@ -38,7 +38,7 @@ jobs:
       with:
         mode: qserver
         project: testimage
-        filelist: "${{ github.workspace }}"
+        filelist: . #"${{ github.workspace }}"
         viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
         ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
         installTics: true
