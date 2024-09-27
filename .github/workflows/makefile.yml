@@ -10,7 +10,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
+    container:
+      image: ghcr.io/azkaratea/ticsimg:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.PKG_TOKEN }}
     steps:
     - uses: actions/checkout@v4
 
@@ -48,7 +53,7 @@ jobs:
       uses: tiobe/tics-github-action@v3
       with:
         mode: client
-        project: tests
+        project: testimage
         filelist: .
         viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
         ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
