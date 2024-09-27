@@ -17,38 +17,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.PKGTOKEN }}
     steps:
-    - uses: actions/checkout@v4
-
-#    - name: configure
-#      run: ./configure
-
-    - name: Install dependencies
-      run: make
-
-#    - name: Run check
-#      run: make check
-
-#    - name: Run distcheck
-#      run: make distcheck
-    - name: Upload binary
-      uses: actions/upload-artifact@v2
-      with:
-        name: hello
-        path: binaries/
-
-    - name: Install dependencies
-      run: |
-        sudo add-apt-repository --yes ppa:mir-team/dev
-        sudo apt install --yes \
-          build-essential \
-          libapparmor-dev \
-          libboost-iostreams-dev \
-          libfreetype6-dev \
-          libmiral-dev \
-          libwayland-dev \
-          ninja-build \
-          pkg-config
-
+    
     - name: Run TICS analysis
       uses: tiobe/tics-github-action@v3
       with:
