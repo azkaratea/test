@@ -10,7 +10,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
+    container:
+      image: ghcr.io/azkaratea/ticsimg:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.PKGTOKEN }}
+        
     steps:
     - uses: actions/checkout@v4
 
