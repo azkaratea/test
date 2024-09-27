@@ -15,7 +15,7 @@ jobs:
       image: ghcr.io/azkaratea/ticsimg:latest
       credentials:
         username: ${{ github.actor }}
-        password: ${{ secrets.PKG_TOKEN }}
+        password: ${{ secrets.PKGTOKEN }}
     steps:
     - uses: actions/checkout@v4
 
