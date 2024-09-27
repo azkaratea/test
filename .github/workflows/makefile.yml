@@ -18,7 +18,13 @@ jobs:
         password: ${{ secrets.PKGTOKEN }}
         
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout the project
+      uses: actions/checkout@v4
 
     - name: Install dependencies
+      run: |
+           sudo apt install --yes \
+           build-essential s
+
+    - name: Build the project
       run: make
