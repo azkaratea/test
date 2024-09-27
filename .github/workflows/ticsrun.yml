@@ -32,13 +32,3 @@ jobs:
          set -x
          export TICSAUTHTOKEN="${{ secrets.TICSAUTHTOKEN }}"
          TICSQServer -project testimage -tmpdir /tmp/tics -branchdir "${{ github.workspace }}"
-    
-    - name: Run TICS analysis with github-action
-      uses: tiobe/tics-github-action@v3
-      with:
-        mode: qserver
-        project: testimage
-        filelist: ${{ github.workspace }}
-        viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
-        ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
-        installTics: false
