@@ -1,0 +1,41 @@
+name: TICS run
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    container:
+      image: ghcr.io/azkaratea/ticsimg:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.PKGTOKEN }}
+        
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Build the project
+      run: make
+
+    - name: Run TICS analysis with the script
+      run:
+         set -x
+         export TICSAUTHTOKEN="${{ secrets.TICSAUTHTOKEN }}"
+         TICSQServer -project testimage -tmpdir /tmp/tics -branchdir "${{ github.workspace }}"
+    
+    - name: Run TICS analysis with github-action
+      uses: tiobe/tics-github-action@v3
+      with:
+        mode: client
+        project: testimage
+        filelist: .
+        viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
+        ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
+        installTics: true
