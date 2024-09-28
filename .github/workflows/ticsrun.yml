@@ -28,7 +28,7 @@ jobs:
       run: make
 
     - name: Run TICS analysis with the script
-      run:
-         set -x
-         export TICSAUTHTOKEN="${{ secrets.TICSAUTHTOKEN }}"
-         TICSQServer -project testimage -tmpdir /tmp/tics -branchdir "${{ github.workspace }}"
+      run: |
+           set -x
+           export TICSAUTHTOKEN="${{ secrets.TICSAUTHTOKEN }}"
+           TICSQServer -project testimage -tmpdir /tmp/tics -branchdir "${{ github.workspace }}"
