@@ -32,4 +32,4 @@ jobs:
       run: |
            set -x
            export TICSAUTHTOKEN="${{ secrets.TICSAUTHTOKEN }}"
-           TICSQServer -project testimage -tmpdir /tmp/tics -branchdir '/root'
+           TICSQServer -project testimage -tmpdir /tmp/tics -calc ABSTRACTINTERPRETATION -branchdir "${{ github.workspace }}"
