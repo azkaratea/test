@@ -33,7 +33,6 @@ jobs:
         mode: qserver
         project: testimage
         filelist: .
-        branchdir: ${{ github.workspace }}
         viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
         ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
         installTics: false
