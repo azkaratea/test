@@ -24,8 +24,8 @@ jobs:
     - name: Install dependencies
       run: apt-get update && apt-get install -y build-essential
 
-    - name: Build the project
-      run: make
+    #- name: Build the project
+    #  run: make
 
     - name: Run TICS analysis with github-action
       uses: tiobe/tics-github-action@v3
