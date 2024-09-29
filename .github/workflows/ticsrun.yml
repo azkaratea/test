@@ -31,4 +31,7 @@ jobs:
       run: |
            set -x
            export TICSAUTHTOKEN="${{ secrets.TICSAUTHTOKEN }}"
+           export PATH="/root/TICS/Wrapper/BuildServer:$PATH"
+           export PATH="/root/TICS/Wrapper/Client:$PATH"
+           export TICS="https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default"
            TICSQServer -project testimage -tmpdir /tmp/tics -branchdir .
