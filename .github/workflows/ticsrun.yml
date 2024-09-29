@@ -34,4 +34,4 @@ jobs:
            export TICSAUTHTOKEN="${{ secrets.TICSAUTHTOKEN }}"
            whoami
            pwd
-           TICSQServer -project testimage -tmpdir /tmp/tics -branchdir .
+           TICSQServer -project testimage -tmpdir /tmp/tics -branchdir "${{ github.workspace }}"
