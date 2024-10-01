@@ -33,4 +33,4 @@ jobs:
         branchdir: .
         viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
         ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
-        installTics: true
+        installTics: false
