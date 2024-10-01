@@ -27,7 +27,7 @@ jobs:
     - name: Run TICS analysis with github-action
       uses: tiobe/tics-github-action@v3
       with:
-        mode: qserver
+        mode: client
         project: testimage
         tmpdir: /tmp/tics
         branchdir: .
