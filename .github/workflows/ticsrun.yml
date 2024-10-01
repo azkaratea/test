@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     
     container:
-      image: ghcr.io/azkaratea/ticsimg:latest
+      image: ghcr.io/canonical/ticsimg:latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.PKGTOKEN }}
