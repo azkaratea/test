@@ -30,6 +30,7 @@ jobs:
         mode: client
         project: testimage
         tmpdir: /tmp/tics
+        filelist: .
         #branchdir: .
         viewerUrl: https://canonical.tiobe.com/tiobeweb/TICS/api/cfg?name=default
         ticsAuthToken: ${{ secrets.TICSAUTHTOKEN }}
