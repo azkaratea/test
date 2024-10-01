@@ -1,4 +1,4 @@
-name: TICS run
+name: TICS run (github-action)
 
 on:
   push:
