@@ -1,4 +1,4 @@
-name: TICS run (script)
+name: Cached TICS
 
 on:
   push:
