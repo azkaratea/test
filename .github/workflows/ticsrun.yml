@@ -24,8 +24,8 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get update
 
-    #- name: Build the project
-    #  run: make
+    - name: Build the project
+      run: make
 
     - name: Run TICS analysis with the script
       run: |
