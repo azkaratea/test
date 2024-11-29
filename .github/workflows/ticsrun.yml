@@ -31,4 +31,5 @@ jobs:
       run: |
            set -x
            export TICSAUTHTOKEN="${{ secrets.TICSAUTHTOKEN }}"
+           make
            TICSQServer -project testimage -tmpdir /tmp/tics -branchdir .
