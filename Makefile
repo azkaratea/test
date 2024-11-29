@@ -5,7 +5,9 @@ CC = gcc
 TARGET = hello
 
 # Default rule to build the target
-all: $(TARGET)
+all: 
+        clean
+        $(TARGET)
 
 # Rule to build the executable
 $(TARGET): hello.c
